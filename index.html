@@ -914,7 +914,7 @@
       <button class="nav-link active" data-page="home" onclick="navigate('home')">Home</button>
       <button class="nav-link" data-page="services" onclick="navigate('services')">Services</button>
       <button class="nav-link" data-page="products" onclick="navigate('products')">Products</button>
-      <button class="nav-link" data-page="signals" onclick="navigate('signals')">Signals</button>
+      <button class="nav-link" data-page="signals" onclick="navigate('signals')">Trading</button>
       <button class="nav-link" data-page="blog" onclick="navigate('blog')" style="display:none;">Blog</button>
       <button class="nav-link" data-page="contact" onclick="navigate('contact')">Contact</button>
     </div>
@@ -926,7 +926,7 @@
     <button class="mobile-link active" data-page="home" onclick="navigate('home');closeMenu()">Home</button>
     <button class="mobile-link" data-page="services" onclick="navigate('services');closeMenu()">Services</button>
     <button class="mobile-link" data-page="products" onclick="navigate('products');closeMenu()">Products</button>
-    <button class="mobile-link" data-page="signals" onclick="navigate('signals');closeMenu()">Signals</button>
+    <button class="mobile-link" data-page="signals" onclick="navigate('signals');closeMenu()">Trading</button>
     <button class="mobile-link" data-page="blog" onclick="navigate('blog');closeMenu()" style="display:none;">Blog</button>
     <button class="mobile-link" data-page="contact" onclick="navigate('contact');closeMenu()">Contact</button>
   </div>
@@ -1393,14 +1393,6 @@ const services = [
 
 const products = [
   {
-    title: 'PIPs Spider Signals',
-    desc: 'Get the full PIPs Spider Signals free — register with our partner broker and fund with a minimum of $100. One license per MT5 account.',
-    features: ['Full Signals access at no cost', 'Register with partner broker', 'Minimum $100 deposit required', 'Runs on MT4 & MT5', 'Built-in risk management', 'One license per MT5 account'],
-    price: 'FREE', period: 'via partner broker', badge: '🎁 Free',
-    action: 'contact', actionLabel: 'Learn More', secondary: 'signals',
-    viewSignalUrl: 'https://www.myfxbook.com/members/pipsmath/pips-spider/12058805'
-  },
-  {
     title: 'PIPs Spider EA',
     desc: 'Subscribe to the PIPs Spider EA and run it live on your MT4/MT5 account. Full support and updates included throughout your subscription.',
     features: ['Subscription — cancel anytime', 'Runs on MT4 & MT5', 'Built-in risk management', 'Auto stop loss & lot sizing', 'Updates included', 'Full setup support'],
@@ -1422,22 +1414,6 @@ const products = [
     features: ['Instant trade open/close alerts', 'Account balance & equity updates', 'Daily & weekly P&L reports', 'Custom drawdown alerts', 'Remote monitoring from phone', '24/7 operation'],
     price: '$119', period: 'One-time', badge: '',
     action: 'contact', actionLabel: 'Contact Us', secondary: null
-  },
-  {
-    title: 'Pegasus EA',
-    desc: 'A high-performance Expert Advisor built for precision entries and disciplined exits. Engineered for consistent execution across volatile market conditions.',
-    features: ['Fully automated trading', 'Runs on MT4 & MT5', 'Advanced entry & exit logic', 'Built-in risk management', 'Auto lot sizing', 'Full setup support'],
-    price: '$499', period: 'One-time', badge: '🚀 New',
-    action: 'contact', actionLabel: 'Contact Us', secondary: null,
-    viewSignalUrl: 'https://www.myfxbook.com/members/pipsmath/pegasus-gold-alpha/12058829'
-  },
-  {
-    title: 'Heva EA',
-    desc: 'A smart, rules-based Expert Advisor designed for steady, low-drawdown performance. Ideal for traders who prioritise capital preservation alongside growth.',
-    features: ['Fully automated trading', 'Runs on MT4 & MT5', 'Low-drawdown strategy', 'Configurable risk settings', 'Hard stop loss on every trade', 'Full setup support'],
-    price: '$299', period: 'One-time', badge: '',
-    action: 'contact', actionLabel: 'Contact Us', secondary: null,
-    viewSignalUrl: 'https://www.myfxbook.com/members/pipsmath/heva-gold/12058841'
   }
 ];
 
@@ -1542,7 +1518,7 @@ function footerHTML() {
             <button class="footer-link" onclick="navigate('home')">Home</button>
             <button class="footer-link" onclick="navigate('services')">Services</button>
             <button class="footer-link" onclick="navigate('products')">Products</button>
-            <button class="footer-link" onclick="navigate('signals')">Signals</button>
+            <button class="footer-link" onclick="navigate('signals')">Trading</button>
         <button class="footer-link" onclick="navigate('blog')" style="display:none;">Blog</button>
           </div>
         </div>
