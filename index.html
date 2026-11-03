@@ -283,6 +283,25 @@
     .feature-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
     .feature-desc { color: var(--slate-400); line-height: 1.7; }
 
+    #home-trading {
+      padding: 6rem 1.5rem;
+      background: var(--bg-800);
+      border-top: 1px solid var(--bg-700);
+      border-bottom: 1px solid var(--bg-700);
+    }
+    .home-trading-head { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+    .home-trading-tag {
+      display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--cyan-400);
+      border: 1px solid rgba(34,211,238,0.35); border-radius: 999px;
+      padding: 4px 14px; margin-bottom: 1rem;
+    }
+    .home-trading-head h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 1rem; }
+    .home-trading-head p { color: var(--slate-400); line-height: 1.7; }
+    .home-trading-card { cursor: pointer; }
+    .home-trading-cta { text-align: center; margin-top: 3rem; }
+    .home-trading-note { color: var(--slate-400); font-size: 0.875rem; margin-top: 1rem; }
+
     #home-cta {
       padding: 5rem 1.5rem;
       text-align: center;
@@ -951,6 +970,7 @@
           Explore Services
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </button>
+        <button class="btn-outline" onclick="navigate('signals')">Start Trading</button>
         <button class="btn-outline" onclick="navigate('products')">View Products</button>
       </div>
     </div>
@@ -959,6 +979,40 @@
         <div><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
         <div><div class="stat-num">200+</div><div class="stat-label">Automated Trading Bots</div></div>
         <div><div class="stat-num">1K+</div><div class="stat-label">Active Users</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-trading">
+    <div class="container">
+      <div class="home-trading-head">
+        <span class="home-trading-tag">Algorithmic Trading</span>
+        <h2>Let <span class="gradient-text-cb">AI-Powered Algo Trading</span> Work for You</h2>
+        <p>Fully automated trading engineered in-house with machine learning and hybrid trading, running live on verified accounts.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card home-trading-card" onclick="navigate('signals')">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          <div class="feature-title">AI-Powered &amp; Fully Automated</div>
+          <div class="feature-desc">Machine learning with rules-based risk management. No emotion, no discretion, no manual trading.</div>
+        </div>
+        <div class="card home-trading-card" onclick="navigate('signals')">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="feature-title">Verified Live Performance</div>
+          <div class="feature-desc">Track real, live results on verified accounts before you decide. No doctored screenshots.</div>
+        </div>
+        <div class="card home-trading-card" onclick="navigate('signals')">
+          <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          <div class="feature-title">Free with Our Partner Broker</div>
+          <div class="feature-desc">Register via our partner broker and trade free while your account stays funded. Otherwise $25/month or $250/year.</div>
+        </div>
+      </div>
+      <div class="home-trading-cta">
+        <button class="btn-primary" onclick="navigate('signals')" style="margin:0 auto;">
+          Explore Trading
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="home-trading-note">See live results, how it works and pricing</div>
       </div>
     </div>
   </section>
@@ -1061,8 +1115,8 @@
     <section class="sig-hero">
       <div class="sig-hero-inner">
         <div class="sig-live-badge"><div class="sig-live-dot"></div> Real Time Live Trading</div>
-        <h1 class="gradient-text-cb">PIPs Spider</h1>
-        <p>One professional signal. Fully automated. Running live on verified accounts — so you always know exactly what you're following.</p>
+        <h1 class="gradient-text-cb">Algorithmic Trading</h1>
+        <p>One professional signal. Fully automated and AI-powered. Running live on verified accounts — so you always know exactly what you're following.</p>
         <div class="sig-hero-stats">
           <div class="sig-stat"><div class="sig-stat-num" style="color:var(--cyan-400);">100%</div><div class="sig-stat-lbl">Algorithmic</div></div>
           <div class="sig-stat-divider"></div>
@@ -1080,10 +1134,10 @@
       <div class="container">
         <div class="sig-about-grid">
           <div class="sig-about-text">
-            <h2>What Is <span class="gradient-text-cb">PIPs Spider</span>?</h2>
-            <p>PIPs Spider is our flagship automated trading signal, engineered in-house and running live on verified accounts. It combines disciplined risk management with a rules-based strategy built for consistent, long-term performance.</p>
-            <p>Every trade is taken algorithmically — no emotion, no discretion. To get started, simply contact us and we'll walk you through setup end-to-end, including our automated copier for seamless execution.</p>
-            <p>Whether you're an experienced trader looking to diversify or a beginner wanting a proven system to follow, PIPs Spider gives you institutional-grade execution with a simple, friendly setup process.</p>
+            <h2>What Is <span class="gradient-text-cb">Algo Trading</span>?</h2>
+            <p>Our algo trading system is our flagship automated strategy, engineered in-house using machine learning and hybrid trading, and running live on verified accounts. It combines machine learning with disciplined risk management and a rules-based strategy built for consistent, long-term performance.</p>
+            <p>Every trade is taken algorithmically — no emotion, no discretion. To get started, simply contact us and we'll walk you through setup end-to-end, for seamless execution.</p>
+            <p>Whether you're an experienced trader looking to diversify or a beginner wanting a proven system to follow, our algorithmic trading system gives you institutional-grade execution with a simple, friendly setup process.</p>
           </div>
           <div class="sig-highlights">
             <div class="sig-hl-row">
@@ -1128,7 +1182,7 @@
     <section class="sig-code-section">
       <div class="container">
         <h2 style="font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-align:center;margin-bottom:0.5rem;">How <span class="gradient-text-cb">Licensing Works</span></h2>
-        <p style="text-align:center;color:var(--slate-400);margin-bottom:2.5rem;font-size:0.95rem;">Two simple steps to get your PIPs Spider EA running live.</p>
+        <p style="text-align:center;color:var(--slate-400);margin-bottom:2.5rem;font-size:0.95rem;">Two simple steps to get algorithmic trading running on your account.</p>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;align-items:start;">
 
@@ -1136,7 +1190,7 @@
           <div style="background:var(--bg-800);border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1.25rem;">
             <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan-400);">Step 1</div>
             <h3 style="font-size:1.5rem;font-weight:800;color:var(--white);margin:0;line-height:1.2;">Open a Partner Broker Account</h3>
-            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">To access the PIPs Spider EA at no cost, you need to open a live trading account with one of our trusted partner brokers. These brokers are vetted for competitive spreads on XAUUSD, fast execution, and reliable MT4/MT5 support — giving your EA the best possible environment to perform.</p>
+            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">To access the algorithmic trading server at no cost, you need to open a live trading account with one of our trusted partner brokers. These brokers are vetted for competitive spreads on XAUUSD, fast execution, and reliable MT4/MT5 support — giving your trades the best possible environment to perform.</p>
             <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">Fund your account with a minimum of <strong style="color:var(--white);">$100</strong> to qualify. Choosing the right broker is one of the most impactful decisions you can make for long-term trading performance — lower spreads directly improve your bottom line.</p>
 
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-top:0.5rem;">
@@ -1161,12 +1215,12 @@
           <!-- STEP 2 -->
           <div style="background:var(--bg-800);border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1.25rem;">
             <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan-400);">Step 2</div>
-            <h3 style="font-size:1.5rem;font-weight:800;color:var(--white);margin:0;line-height:1.2;">Request Your EA License</h3>
-            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">The PIPs Spider EA is protected and license-verified. On startup, the EA authenticates your MT5 account number against our server to confirm your subscription is active. If your subscription lapses, the EA stops trading automatically — keeping everything secure and fair for all users. One license is issued per MT5 account number.</p>
+            <h3 style="font-size:1.5rem;font-weight:800;color:var(--white);margin:0;line-height:1.2;">Request Your License</h3>
+            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">The algorithmic trading server is protected and license-verified. Your account is authenticated against our server to confirm your membership and subscription are active. If your subscription lapses, access stops automatically — keeping everything secure and fair for all users. One license is issued per MT5 account number.</p>
 
             <div style="background:rgba(74,222,128,0.05);border:1px solid rgba(74,222,128,0.25);border-radius:10px;padding:1.25rem;display:flex;flex-direction:column;gap:0.6rem;">
-              <div style="font-weight:700;color:var(--green-400);font-size:0.95rem;">🎁 Get the EA for Free</div>
-              <div style="font-size:0.875rem;color:var(--slate-300);line-height:1.65;">Register with our partner broker and fund your account with a minimum of <strong style="color:var(--white);">$100</strong> — we'll issue your PIPs Spider EA license at <strong style="color:var(--green-400);">no cost</strong>. One license per MT5 account.</div>
+              <div style="font-weight:700;color:var(--green-400);font-size:0.95rem;">🎁 Free with Our Partner Broker</div>
+              <div style="font-size:0.875rem;color:var(--slate-300);line-height:1.65;">Register with our partner broker and fund your account with a minimum of <strong style="color:var(--white);">$100</strong> — we'll issue your algorithmic trading license at <strong style="color:var(--green-400);">no cost</strong> for as long as your account stays funded and registered via our partner broker. Not using our broker? Subscribe for <strong style="color:var(--white);">$25/month</strong> or <strong style="color:var(--white);">$250/year</strong>. One license per MT5 account.</div>
             </div>
 
             <p style="font-size:0.875rem;color:var(--slate-400);line-height:1.7;margin:0;">Not sure which option suits you? Contact us and we'll help you pick the right path — whether you're just starting out or ready to go fully automated.</p>
@@ -1181,21 +1235,48 @@
     <section class="sig-pricing-section" id="sig-trial-anchor">
       <div class="container">
         <h2 style="font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-align:center;margin-bottom:0.6rem;">Pricing</h2>
-        <p style="text-align:center;color:var(--slate-400);margin-bottom:3rem;font-size:0.95rem;">Start with a free trial. Choose the plan that fits you.</p>
+        <p style="text-align:center;color:var(--slate-400);margin-bottom:3rem;font-size:0.95rem;">Free with our partner broker, or choose a subscription that fits you.</p>
         <div class="sig-pricing-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:960px;">
           <!-- Free via broker -->
           <div class="sig-price-card" style="border-color:rgba(74,222,128,0.35);background:linear-gradient(135deg,var(--bg-800),rgba(74,222,128,0.04));">
             <div class="sig-price-badge" style="background:linear-gradient(90deg,#16a34a,#15803d);">Free</div>
             <div class="sig-price-label">Partner Broker Deal</div>
-            <div class="sig-price-num" style="color:var(--green-400);">$0<span class="sig-price-per"> EA cost</span></div>
-            <div class="sig-price-desc">Register with our partner broker, fund with min. $100 and get the PIPs Spider EA completely free.</div>
+            <div class="sig-price-num" style="color:var(--green-400);">$0<span class="sig-price-per"> while active</span></div>
+            <div class="sig-price-desc">Register with our partner broker, fund with min. $100 and use algorithmic trading free for as long as your account stays funded and registered via our partner broker.</div>
             <ul class="sig-price-features">
               <li>Register with partner broker</li>
               <li>Minimum $100 deposit</li>
-              <li>Full EA license issued free</li>
+              <li>Free while account is funded &amp; linked</li>
               <li>One license per MT5 account</li>
             </ul>
             <button class="btn-primary" style="width:100%;justify-content:center;background:linear-gradient(90deg,#16a34a,#15803d);" onclick="window.open('https://t.me/pipsmathofficial','_blank')">Get Started for Free</button>
+          </div>
+          <!-- Monthly -->
+          <div class="sig-price-card">
+            <div class="sig-price-badge">Flexible</div>
+            <div class="sig-price-label">Monthly</div>
+            <div class="sig-price-num">$25<span class="sig-price-per"> / month</span></div>
+            <div class="sig-price-desc">Use any broker you like. Pay $25 per month and cancel anytime.</div>
+            <ul class="sig-price-features">
+              <li>Works with any MT4/MT5 broker</li>
+              <li>Updates &amp; full setup support</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;" onclick="window.open('https://t.me/pipsmathofficial','_blank')">Subscribe Monthly</button>
+          </div>
+          <!-- Yearly -->
+          <div class="sig-price-card" style="border-color:rgba(34,211,238,0.35);">
+            <div class="sig-price-badge">Best Value</div>
+            <div class="sig-price-label">Yearly</div>
+            <div class="sig-price-num">$250<span class="sig-price-per"> / year</span></div>
+            <div class="sig-price-desc">Pay for 10 months, get 12. That's about $20.83 per month &mdash; you save $50 a year compared to monthly.</div>
+            <ul class="sig-price-features">
+              <li>Works with any MT4/MT5 broker</li>
+              <li>Save $50 vs. monthly</li>
+              <li>Updates &amp; full setup support</li>
+              <li>Best price per month</li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;" onclick="window.open('https://t.me/pipsmathofficial','_blank')">Choose Yearly</button>
           </div>
         </div>
       </div>
@@ -1210,7 +1291,7 @@
           <div class="sig-support-card" onclick="window.open('https://t.me/pipsmathofficial','_blank')">
             <div class="sig-support-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
             <div class="sig-support-title">Subscribe via Telegram</div>
-            <div class="sig-support-desc">Message us on Telegram to start your free trial or purchase — we'll handle setup end-to-end</div>
+            <div class="sig-support-desc">Message us on Telegram to get started — we'll handle setup end-to-end</div>
             <span class="sig-support-link">Open Telegram <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
           <div class="sig-support-card" onclick="window.open('https://t.me/pipsmathofficial','_blank')">
@@ -1396,7 +1477,7 @@ const products = [
     title: 'PIPs Spider EA',
     desc: 'Subscribe to the PIPs Spider EA and run it live on your MT4/MT5 account. Full support and updates included throughout your subscription.',
     features: ['Subscription — cancel anytime', 'Runs on MT4 & MT5', 'Built-in risk management', 'Auto stop loss & lot sizing', 'Updates included', 'Full setup support'],
-    price: '<span style="text-decoration:line-through;font-size:1.2rem;color:var(--slate-500);">$150</span> $50', period: 'Monthly Subscription', badge: '🔥 Best Value',
+    price: '$25', period: 'Monthly Subscription', badge: '',
     action: 'contact', actionLabel: 'Contact Us', secondary: 'signals',
     viewSignalUrl: 'https://www.myfxbook.com/members/pipsmath/pips-spider/12058805',
     hidden: true
@@ -1730,7 +1811,8 @@ const docs = {
       <h2>2. Products and Licensing</h2>
       <p>All Expert Advisors (EAs), indicators, and software products sold by PIPSmath are licensed — not sold outright unless explicitly stated. Licenses are issued per MT4/MT5 account number. Redistribution, resale, reverse-engineering, or sharing of any PIPSmath product without written permission is strictly prohibited.</p>
       <h2>3. Payment and Delivery</h2>
-      <p>Payment details are discussed directly with our team. Upon confirmed payment, your license or access credentials will be delivered promptly. PIPSmath reserves the right to revoke access in cases of misuse or violation of these terms.</p>
+      <p>Payment details are discussed directly with our team. Upon confirmed payment, your license or access credentials will be delivered promptly. Subscriptions are available monthly ($25) or yearly ($250) and renew until cancelled; if a subscription lapses, the EA will stop trading automatically. PIPSmath reserves the right to revoke access in cases of misuse or violation of these terms.</p>
+      <p><strong>Free license via partner broker:</strong> A free license is available while your trading account with our partner broker remains funded (minimum $100) and linked to PIPSmath. If the account is closed, falls below the minimum, or is moved away from the partner broker, the free license may be suspended unless you move to a paid subscription.</p>
       <h2>4. Refund Policy</h2>
       <p>Due to the digital nature of our products, all sales are final once a license key or access has been issued. If you experience a technical issue with a product, please contact our support team and we will make every effort to resolve it.</p>
       <h2>5. Trading Risk</h2>
@@ -1767,8 +1849,8 @@ const docs = {
       <h2>Welcome to PIPSmath</h2>
       <p>PIPSmath provides professional algorithmic trading solutions — including the PIPs Spider signal, custom Expert Advisors, and trading tools for MetaTrader 4/5 and other platforms. Here's how to get started:</p>
       <h2>Step 1: Choose Your Path</h2>
-      <p><strong>PIPs Spider Signals (Free via Partner Broker):</strong> Register with our partner broker, fund your account with a minimum of $100, and receive your PIPs Spider EA license at no cost. This is the easiest entry point.</p>
-      <p><strong>PIPs Spider EA (Purchase):</strong> Purchase the EA outright for a one-time fee of $699 and run it on any MT4/MT5 account of your choice.</p>
+      <p><strong>Free via Partner Broker:</strong> Register with our partner broker, fund your account with a minimum of $100, and receive your PIPs Spider EA license at no cost for as long as your account stays funded and linked. This is the easiest entry point.</p>
+      <p><strong>Subscription (Any Broker):</strong> Prefer a different broker? Subscribe for $25 per month or $250 per year and run the EA on any MT4/MT5 account.</p>
       <p><strong>Other Products:</strong> We also offer the Multi Account Copier ($99) and Telegram Trading Bot ($119) for traders looking to enhance their existing setup.</p>
       <h2>Step 2: Contact Us</h2>
       <p>Reach out via our <a href="#" onclick="closeDoc();navigate('contact');return false;" style="color:var(--cyan-400);">Contact page</a> to discuss your chosen option. Our team will guide you through the setup process from start to finish.</p>
@@ -1803,13 +1885,17 @@ const docs = {
       <h2>What is PIPs Spider?</h2>
       <p>PIPs Spider is PIPSmath's flagship automated trading EA. It trades XAUUSD (Gold) on MetaTrader 4/5 using a fully algorithmic strategy, with all results tracked live on verified accounts.</p>
       <h2>How do I get PIPs Spider for free?</h2>
-      <p>Register with our partner broker and fund your account with a minimum of $100. We will then issue your PIPs Spider license at no cost. Contact us via the <a href="#" onclick="closeDoc();navigate('contact');return false;" style="color:var(--cyan-400);">Contact page</a> to get started.</p>
+      <p>Register with our partner broker and fund your account with a minimum of $100. We will then issue your PIPs Spider license at no cost, and it stays free for as long as your account remains funded and linked to our partner broker. Contact us via the <a href="#" onclick="closeDoc();navigate('contact');return false;" style="color:var(--cyan-400);">Contact page</a> to get started.</p>
       <h2>What is the difference between the free and paid version?</h2>
-      <p>Both options give you the same PIPs Spider EA. The free option is available when you trade with our partner broker. The $699 purchase gives you a license to use on any broker of your choice.</p>
+      <p>Both options give you the same PIPs Spider EA. The free option is available while you trade with our partner broker. A subscription ($25/month or $250/year) lets you use the EA with any broker of your choice.</p>
+      <h2>How much does it cost?</h2>
+      <p>If you trade with our partner broker, the EA is free while your account stays funded and linked. Otherwise, you can subscribe for $25 per month or $250 per year (about $20.83 per month) and use any broker. You can review our live performance on the Trading page before you decide.</p>
+      <h2>What happens if I move my account away from the partner broker?</h2>
+      <p>The free license is tied to your account being funded and linked to our partner broker. If that changes, you can switch to a monthly or yearly subscription to keep using the EA.</p>
       <h2>Do I need any coding experience?</h2>
       <p>No. The EA is delivered as a compiled file ready to attach to your chart. We provide full installation instructions and support throughout the setup process.</p>
       <h2>What broker should I use?</h2>
-      <p>PIPs Spider works with any MT4/MT5 broker. For the free license offer, you must use our partner broker. We recommend brokers with low spreads on XAUUSD for best results.</p>
+      <p>PIPs Spider works with any MT4/MT5 broker. For the free license, you must use our partner broker; with a paid subscription you can use any broker. We recommend brokers with low spreads on XAUUSD for best results.</p>
       <h2>How was the EA backtested?</h2>
       <p>The EA was backtested on 4+ years of XAUUSD H1 data (2022–2026) using 99% tick quality data on IC Markets. The backtest produced a Profit Factor of 3.02, 76% win rate, and a maximum balance drawdown of 9.35%.</p>
       <h2>Is the source code available?</h2>
