@@ -549,6 +549,17 @@
     .sig-price-features li { font-size: 0.875rem; color: var(--slate-300); display: flex; align-items: center; gap: 8px; }
     .sig-price-features li::before { content: '✓'; color: var(--cyan-400); font-weight: 700; font-size: 0.8rem; flex-shrink: 0; }
 
+    /* Download */
+    .sig-dl-section { padding: 5rem 1.5rem; }
+    .sig-dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 1.75rem; max-width: 900px; margin: 0 auto; }
+    .sig-dl-card {
+      background: var(--bg-800); border: 1px solid var(--bg-700); border-radius: 16px;
+      padding: 2.25rem 2rem 2rem; position: relative; display: flex; flex-direction: column; gap: 1rem;
+    }
+    .sig-dl-card h3 { font-size: 1.4rem; font-weight: 800; margin: 0; line-height: 1.2; }
+    .sig-dl-card p { font-size: 0.9rem; color: var(--slate-300); line-height: 1.7; margin: 0; }
+    .sig-dl-note { max-width: 900px; margin: 1.75rem auto 0; text-align: center; font-size: 0.85rem; color: var(--slate-400); line-height: 1.7; }
+
     /* Free trial (now merged into pricing) */
     .sig-trial-section { padding: 5rem 1.5rem; background: var(--bg-900); }
     .sig-trial-sub { text-align: center; color: var(--slate-400); margin-bottom: 3rem; font-size: 0.95rem; }
@@ -1003,8 +1014,8 @@
         </div>
         <div class="card home-trading-card" onclick="navigate('signals')">
           <svg class="feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-          <div class="feature-title">Free with Our Partner Broker</div>
-          <div class="feature-desc">Register via our partner broker and trade free while your account stays funded. Otherwise $25/month or $250/year.</div>
+          <div class="feature-title">Free to Start</div>
+          <div class="feature-desc">Download Pips Weaver free for 60 days on any MT5 account, or trade free via our partner broker. Otherwise $25/month or $250/year.</div>
         </div>
       </div>
       <div class="home-trading-cta">
@@ -1124,6 +1135,7 @@
         </div>
         <div class="sig-hero-btns">
           <button class="btn-primary" onclick="window.open('https://t.me/pipsmathofficial','_blank')">Get Started for Free</button>
+          <button class="btn-outline" onclick="document.getElementById('sig-download-anchor').scrollIntoView({behavior:'smooth'})">Download Free</button>
           <button class="btn-outline" onclick="document.getElementById('sig-widget-anchor').scrollIntoView({behavior:'smooth'})">View Performance</button>
         </div>
       </div>
@@ -1216,7 +1228,7 @@
           <div style="background:var(--bg-800);border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1.25rem;">
             <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan-400);">Step 2</div>
             <h3 style="font-size:1.5rem;font-weight:800;color:var(--white);margin:0;line-height:1.2;">Request Your License</h3>
-            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">The algorithmic trading server is protected and license-verified. Your account is authenticated against our server to confirm your membership and subscription are active. If your subscription lapses, access stops automatically — keeping everything secure and fair for all users. One license is issued per MT5 account number.</p>
+            <p style="font-size:0.9rem;color:var(--slate-300);line-height:1.7;margin:0;">The algorithmic trading server is protected and license-verified. Your account is authenticated against our server to confirm your membership and subscription are active. If your subscription lapses, access stops automatically — keeping everything secure and fair for all users. One license is issued per MT5 account number. The WebSocket streaming version also needs your broker's approval before authentication — contact us and we'll guide you through it.</p>
 
             <div style="background:rgba(74,222,128,0.05);border:1px solid rgba(74,222,128,0.25);border-radius:10px;padding:1.25rem;display:flex;flex-direction:column;gap:0.6rem;">
               <div style="font-weight:700;color:var(--green-400);font-size:0.95rem;">🎁 Free with Our Partner Broker</div>
@@ -1228,6 +1240,46 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ④b DOWNLOAD -->
+    <section class="sig-dl-section" id="sig-download-anchor">
+      <div class="container">
+        <h2 style="font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;text-align:center;margin-bottom:0.5rem;">Get <span class="gradient-text-cb">Pips Weaver</span></h2>
+        <p style="text-align:center;color:var(--slate-400);margin-bottom:3rem;font-size:0.95rem;">Start instantly with the free plan, or use the streaming version for live connection.</p>
+        <div class="sig-dl-grid">
+          <!-- Free instant download -->
+          <div class="sig-dl-card" style="border-color:rgba(74,222,128,0.35);background:linear-gradient(135deg,var(--bg-800),rgba(74,222,128,0.04));">
+            <div class="sig-price-badge" style="background:linear-gradient(90deg,#16a34a,#15803d);">Free Plan &middot; Instant Download</div>
+            <div class="sig-price-label">Pips Weaver EA</div>
+            <h3>Free for 60 Days</h3>
+            <p>Download Pips Weaver instantly and use it free for 60 days on any MT5 account. No approval needed.</p>
+            <ul class="sig-price-features">
+              <li>Instant download</li>
+              <li>60 days free use</li>
+              <li>Works on any MT5 account</li>
+            </ul>
+            <a href="PipsWeaver.ex5" download="PipsWeaver.ex5" class="btn-primary" style="width:100%;justify-content:center;background:linear-gradient(90deg,#16a34a,#15803d);text-decoration:none;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Pips Weaver
+            </a>
+          </div>
+          <!-- WebSocket streaming -->
+          <div class="sig-dl-card" style="border-color:rgba(34,211,238,0.35);">
+            <div class="sig-price-badge">WebSocket Streaming</div>
+            <div class="sig-price-label">Streaming Version</div>
+            <h3>Live Streaming Access</h3>
+            <p>The WebSocket streaming version is for accounts on the free partner broker deal or a paid subscription. Your broker must approve the connection before your account can be authenticated.</p>
+            <ul class="sig-price-features">
+              <li>Free via partner broker or paid subscription</li>
+              <li>Broker approval required before authentication</li>
+              <li>We guide you through the process</li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;" onclick="window.open('https://t.me/pipsmathofficial','_blank')">Request Streaming Access</button>
+          </div>
+        </div>
+        <p class="sig-dl-note">Not sure which version suits you? Contact us and we'll help you choose.</p>
       </div>
     </section>
 
@@ -1849,6 +1901,7 @@ const docs = {
       <h2>Welcome to PIPSmath</h2>
       <p>PIPSmath provides professional algorithmic trading solutions — including the PIPs Spider signal, custom Expert Advisors, and trading tools for MetaTrader 4/5 and other platforms. Here's how to get started:</p>
       <h2>Step 1: Choose Your Path</h2>
+      <p><strong>Free Download (60 Days):</strong> Download Pips Weaver from the Trading page and use it free for 60 days on any MT5 account.</p>
       <p><strong>Free via Partner Broker:</strong> Register with our partner broker, fund your account with a minimum of $100, and receive your PIPs Spider EA license at no cost for as long as your account stays funded and linked. This is the easiest entry point.</p>
       <p><strong>Subscription (Any Broker):</strong> Prefer a different broker? Subscribe for $25 per month or $250 per year and run the EA on any MT4/MT5 account.</p>
       <p><strong>Other Products:</strong> We also offer the Multi Account Copier ($99) and Telegram Trading Bot ($119) for traders looking to enhance their existing setup.</p>
@@ -1886,6 +1939,10 @@ const docs = {
       <p>PIPs Spider is PIPSmath's flagship automated trading EA. It trades XAUUSD (Gold) on MetaTrader 4/5 using a fully algorithmic strategy, with all results tracked live on verified accounts.</p>
       <h2>How do I get PIPs Spider for free?</h2>
       <p>Register with our partner broker and fund your account with a minimum of $100. We will then issue your PIPs Spider license at no cost, and it stays free for as long as your account remains funded and linked to our partner broker. Contact us via the <a href="#" onclick="closeDoc();navigate('contact');return false;" style="color:var(--cyan-400);">Contact page</a> to get started.</p>
+      <h2>Is there a free plan?</h2>
+      <p>Yes. You can download the Pips Weaver EA instantly from the Trading page and use it free for 60 days on any MT5 account.</p>
+      <h2>What is the WebSocket streaming version?</h2>
+      <p>The streaming version is for accounts on the free partner broker deal or a paid subscription. Your broker must approve the connection before your account can be authenticated. Contact us and we'll guide you through the process.</p>
       <h2>What is the difference between the free and paid version?</h2>
       <p>Both options give you the same PIPs Spider EA. The free option is available while you trade with our partner broker. A subscription ($25/month or $250/year) lets you use the EA with any broker of your choice.</p>
       <h2>How much does it cost?</h2>
