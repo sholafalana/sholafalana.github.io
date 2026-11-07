@@ -496,6 +496,84 @@
       font-family: ui-monospace, monospace;
     }
 
+    /* Live performance cards */
+    .perf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .perf-card {
+      position: relative;
+      background: linear-gradient(160deg, var(--bg-800), var(--bg-900));
+      border: 1px solid var(--bg-700);
+      border-radius: 18px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+    .perf-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--cyan-400), var(--blue-500), var(--purple-400));
+      opacity: 0.85;
+    }
+    .perf-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(34,211,238,0.4);
+      box-shadow: 0 14px 44px rgba(34,211,238,0.10);
+    }
+    .perf-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 0.25rem 0.25rem 0; }
+    .perf-title { font-size: 1.1rem; font-weight: 800; color: var(--white); line-height: 1.2; }
+    .perf-sub { font-size: 0.78rem; color: var(--slate-400); margin-top: 3px; }
+    .perf-badges { display: flex; align-items: center; gap: 8px; }
+    .perf-badge {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(34,211,238,0.12); color: #67e8f9;
+      border: 1px solid rgba(34,211,238,0.22);
+    }
+    .perf-live {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em;
+      padding: 4px 10px; border-radius: 999px;
+      background: rgba(74,222,128,0.10); color: var(--green-400);
+      border: 1px solid rgba(74,222,128,0.28);
+    }
+    .perf-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--green-400); animation: blink 1.5s ease-in-out infinite; }
+    .perf-frame {
+      display: block;
+      background: #000;
+      border: 1px solid rgba(51,65,85,0.7);
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 800 / 350;
+      position: relative;
+    }
+    .perf-frame img { width: 100%; height: 100%; object-fit: contain; display: block; transition: transform 0.4s; }
+    .perf-card:hover .perf-frame img { transform: scale(1.015); }
+    .perf-foot { display: flex; align-items: center; justify-content: space-between; padding: 0 0.25rem 0.1rem; font-size: 0.8rem; }
+    .perf-foot span { color: var(--slate-400); }
+    .perf-foot a {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--cyan-400); font-weight: 700; text-decoration: none; transition: color 0.2s;
+    }
+    .perf-foot a:hover { color: #67e8f9; }
+    .perf-foot svg { width: 13px; height: 13px; }
+    .perf-empty {
+      aspect-ratio: 800 / 350;
+      border: 1.5px dashed var(--bg-600);
+      border-radius: 12px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      color: var(--slate-400); text-align: center; padding: 1rem; font-size: 0.85rem;
+    }
+    .perf-empty svg { width: 34px; height: 34px; color: var(--cyan-400); opacity: 0.4; }
+    .perf-note { text-align: center; color: var(--slate-400); font-size: 0.8rem; margin-top: 1.75rem; }
+
     /* Code on request */
     .sig-code-section { padding: 5rem 1.5rem; }
     .sig-code-card {
@@ -1182,11 +1260,8 @@
       <div class="container">
         <h2>Live Performance</h2>
         <p class="sig-widget-sub">All results verified and published in real time on live verified accounts</p>
-        <div class="sig-widget-frame" style="display:flex;justify-content:center;align-items:center;padding:1.5rem;background:transparent;border:none;box-shadow:none;">
-          <a href="https://www.myfxbook.com/members/pipsmath/pips-spider/12058805" target="_blank" rel="noopener" style="display:block;max-width:100%;overflow:hidden;border-radius:12px;">
-            <img alt="widget" src="https://widgets.myfxbook.com/custom-widget?id=12058805&width=800&height=350&bart=0&linet=0&symbol=GOLD&magic=-1&title=Pips Spider&titles=14&bgColor=000000&gridColor=bdbdbd&lineColor=ff4200&barColor=ff8d65&bar1Color=ff8d65&fontColor=ffffff&chartbgc=000000&equityColor=eff45a" style="width:100%;max-width:800px;height:auto;display:block;border-radius:12px;" />
-          </a>
-        </div>
+        <div class="perf-grid" id="perf-grid"></div>
+        <p class="perf-note">Verified by Myfxbook &middot; Click any chart to open the full live track record</p>
       </div>
     </section>
 
@@ -2347,7 +2422,70 @@ async function submitTrialForm() {
   }
 }
 
+// ─── LIVE PERFORMANCE WIDGETS (Myfxbook) ───
+// To add or change a widget, edit this list. `id` is the number in the Myfxbook widget URL
+// (…custom-widget?id=XXXXXXXX…) and `url` is the public link to the account page.
+const perfWidgets = [
+  {
+    title: 'Pips Spider',
+    sub: 'Fully automated · XAUUSD',
+    symbol: 'GOLD',
+    id: '12058805',
+    url: 'https://www.myfxbook.com/members/pipsmath/pips-spider/12058805'
+  },
+  {
+    title: 'Second Strategy',          // ← rename
+    sub: 'Fully automated',            // ← describe
+    symbol: 'GOLD',                    // ← symbol shown on the widget
+    id: '',                            // ← paste the Myfxbook widget id here
+    url: ''                            // ← paste the Myfxbook account link here
+  }
+];
+
+function perfWidgetSrc(w) {
+  return 'https://widgets.myfxbook.com/custom-widget?id=' + w.id +
+    '&width=800&height=350&bart=0&linet=0&symbol=' + encodeURIComponent(w.symbol) +
+    '&magic=-1&title=' + encodeURIComponent(w.title) +
+    '&titles=14&bgColor=000000&gridColor=bdbdbd&lineColor=ff4200&barColor=ff8d65&bar1Color=ff8d65' +
+    '&fontColor=ffffff&chartbgc=000000&equityColor=eff45a';
+}
+
+function renderPerf() {
+  const el = document.getElementById('perf-grid');
+  if (!el) return;
+  el.innerHTML = perfWidgets.map(w => {
+    const ready = !!w.id;
+    const body = ready
+      ? `<a class="perf-frame" href="${w.url}" target="_blank" rel="noopener">
+           <img alt="${w.title} live performance chart" loading="lazy" src="${perfWidgetSrc(w)}" />
+         </a>`
+      : `<div class="perf-empty">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+           <div>Widget coming soon</div>
+         </div>`;
+    return `
+      <div class="perf-card">
+        <div class="perf-head">
+          <div>
+            <div class="perf-title">${w.title}</div>
+            <div class="perf-sub">${w.sub}</div>
+          </div>
+          <div class="perf-badges">
+            <span class="perf-badge">${w.symbol === 'GOLD' ? 'XAUUSD' : w.symbol}</span>
+            ${ready ? '<span class="perf-live"><i></i> LIVE</span>' : ''}
+          </div>
+        </div>
+        ${body}
+        <div class="perf-foot">
+          <span>Verified on Myfxbook</span>
+          ${ready ? `<a href="${w.url}" target="_blank" rel="noopener">View full track record ${extIcon}</a>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+}
+
 // ─── INIT ───
+renderPerf();
 renderServices();
 renderProducts();
 renderBlog();
