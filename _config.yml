@@ -2,6 +2,15 @@ title: PIPSmath
 description: Algorithmic trading tools and solutions
 url: "https://www.pipsmath.com"
 permalink: /blog/:title/
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# every file in _posts/ automatically uses the post layout (nav on top, then title + content)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
