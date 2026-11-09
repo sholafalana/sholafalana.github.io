@@ -1,0 +1,7 @@
+title: PIPSmath
+description: Algorithmic trading tools and solutions
+url: "https://www.pipsmath.com"
+permalink: /blog/:title/
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
