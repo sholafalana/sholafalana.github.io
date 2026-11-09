@@ -322,6 +322,33 @@
     /* ─── SERVICES PAGE ─── */
     #services-page { padding-top: 80px; }
 
+
+    /* ─── PRODUCT DETAIL PAGES ─── */
+    .pd-wrap { max-width:900px; margin:0 auto; }
+    .pd-badge { display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan-400); background:rgba(34,211,238,.1); border:1px solid rgba(34,211,238,.3); padding:5px 12px; border-radius:999px; margin-bottom:1rem; }
+    .pd-wrap h2 { font-size:clamp(1.3rem,3vw,1.7rem); font-weight:800; margin:2.5rem 0 1rem; }
+    .pd-wrap p { color:var(--slate-300); line-height:1.8; margin-bottom:1rem; }
+    .pd-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem; }
+    .pd-feat { background:var(--bg-800); border:1px solid rgba(99,102,241,.2); border-radius:12px; padding:1.1rem 1.25rem; }
+    .pd-feat b { display:block; color:var(--white); margin-bottom:.3rem; font-size:.95rem; }
+    .pd-feat span { color:var(--slate-400); font-size:.88rem; line-height:1.6; }
+    .pd-list { list-style:none; display:flex; flex-direction:column; gap:.65rem; padding:0; }
+    .pd-list li { position:relative; padding-left:1.6rem; color:var(--slate-300); line-height:1.65; font-size:.95rem; }
+    .pd-list li::before { content:'\2713'; position:absolute; left:0; color:var(--cyan-400); font-weight:800; }
+    .pd-steps { counter-reset:pd; list-style:none; padding:0; display:flex; flex-direction:column; gap:.7rem; }
+    .pd-steps li { counter-increment:pd; position:relative; padding:.8rem 1rem .8rem 3.2rem; background:var(--bg-800); border-radius:10px; color:var(--slate-300); font-size:.92rem; line-height:1.6; }
+    .pd-steps li::before { content:counter(pd); position:absolute; left:.9rem; top:.75rem; width:1.6rem; height:1.6rem; border-radius:50%; background:linear-gradient(135deg,var(--cyan-500),var(--blue-500)); color:#020617; font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+    .pd-note { background:rgba(251,146,60,.08); border:1px solid rgba(251,146,60,.35); border-radius:10px; padding:1rem 1.25rem; color:var(--slate-300); font-size:.92rem; line-height:1.65; margin:1.5rem 0; }
+    .pd-note b { color:var(--orange-400); }
+    .pd-cta { background:linear-gradient(135deg,var(--bg-800),rgba(34,211,238,.05)); border:1px solid rgba(34,211,238,.3); border-radius:16px; padding:2rem; text-align:center; margin-top:2.5rem; }
+    .pd-cta h3 { font-size:1.35rem; font-weight:800; margin-bottom:.5rem; }
+    .pd-cta p { color:var(--slate-400); margin-bottom:1.5rem; }
+    .pd-cta-row { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
+    .pd-code { font-family:ui-monospace,Menlo,Consolas,monospace; background:var(--bg-900); border:1px solid var(--bg-700); border-radius:6px; padding:1px 6px; color:#a5f3fc; font-size:.85em; }
+    .pd-video { position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden; background:#000; }
+    .pd-video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .pd-card { background:var(--bg-800); border:1px solid rgba(99,102,241,.2); border-radius:16px; padding:1.25rem; }
+
     /* ─── ALGO DEV (services) ─── */
     #algo-dev { padding: 4rem 1.5rem 1rem; }
     .ad-hero { max-width:760px; margin:0 auto; text-align:center; }
@@ -1311,6 +1338,180 @@
   <div id="footer-products"></div>
 </div>
 
+<!-- ══════════════════ PRODUCT: MULTI ACCOUNT COPIER (hidden page) ══════════════════ -->
+<div id="page-copier" class="page">
+  <div style="padding-top:80px;">
+    <section style="padding:4rem 1.5rem;background:linear-gradient(to bottom,var(--bg-900),var(--bg-950));">
+      <div class="container section-header" style="margin-bottom:0;">
+        <h1 class="gradient-text-cb">MT4/MT5 Multi Account Copier</h1>
+        <p>MT5 Utility &middot; Instant trade replication across terminals</p>
+      </div>
+    </section>
+    <section style="padding:3rem 1.5rem 5rem;">
+      <div class="container pd-wrap">
+        <button class="back-link" onclick="navigate('products')" style="margin:0 0 1.5rem;display:flex;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Products</button>
+        <span class="pd-badge">MT5 Utility</span>
+        <p>Unleash the power of seamless trade replication with <strong style="color:var(--white);">MT4/MT5 Multi Account Copier</strong>, the Expert Advisor (EA) designed for traders seeking speed and efficiency! This innovative tool automates routine tasks and simplifies multi-account management, allowing you to replicate trades across multiple terminals with unmatched speed and accuracy.</p>
+        <p>Whether you're managing a single strategy or a complex portfolio, Multi Replicator Copier ensures every move is mirrored effortlessly. This utility empowers both novice and expert traders to optimize their trading experience.</p>
+
+        <h2>Why Choose MT4/MT5 <span class="gradient-text-cb">Multi Account Copier?</span></h2>
+        <div class="pd-grid">
+          <div class="pd-feat"><b>Instant Trade Duplication</b><span>Copy every trade in real-time, under 0.5 seconds!</span></div>
+          <div class="pd-feat"><b>Multi-Symbol Mastery</b><span>Expand your portfolio across countless currency pairs.</span></div>
+          <div class="pd-feat"><b>Flexible Control</b><span>Customize lot sizes and symbol mapping between accounts.</span></div>
+          <div class="pd-feat"><b>Prop Firm Friendly</b><span>Ability to invert trades, used by prop firm traders for hedging techniques.</span></div>
+          <div class="pd-feat"><b>Effortless Setup</b><span>Plug-and-play design for traders of all levels.</span></div>
+        </div>
+        <div class="pd-cta">
+          <h3>Get the Full Version</h3>
+          <p>Contact us to purchase the full version, or try the demo first on a demo account.</p>
+          <div class="pd-cta-row">
+            <button class="btn-primary" onclick="window.open('https://t.me/pipsmath_admin','_blank')">Contact Us to Purchase</button>
+            <button class="btn-outline" onclick="navigate('demo-copier')">Download Demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer-copier"></div>
+</div>
+
+<!-- ══════════════════ PRODUCT: TELEGRAM TRADING BOT (hidden page) ══════════════════ -->
+<div id="page-telegram" class="page">
+  <div style="padding-top:80px;">
+    <section style="padding:4rem 1.5rem;background:linear-gradient(to bottom,var(--bg-900),var(--bg-950));">
+      <div class="container section-header" style="margin-bottom:0;">
+        <h1 class="gradient-text-cb">MT4/MT5 Telegram Trading Bot</h1>
+        <p>All-in-one multipurpose Telegram trade management</p>
+      </div>
+    </section>
+    <section style="padding:3rem 1.5rem 5rem;">
+      <div class="container pd-wrap">
+        <button class="back-link" onclick="navigate('products')" style="margin:0 0 1.5rem;display:flex;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Products</button>
+        <span class="pd-badge">MT5 Utility</span>
+        <p style="font-size:1.1rem;color:var(--white);font-weight:600;">Manage and copy trades on the go, from Telegram.</p>
+
+        <h2>Execute Trades on Mobile <span class="gradient-text-cb">with Fast Execution</span></h2>
+        <p>When you're away from desktop MT5, scalping the market from your phone, or need to copy trades from Telegram groups while you're busy with other things, the Telegram EA Manager is an effective tool for any trade operation with swift execution. It lets you communicate with your Expert Advisor directly from your mobile phone and manage your trades with operations not available on mobile MT4/MT5.</p>
+
+        <h2>Features of <span class="gradient-text-cb">Telegram Trading Bot</span></h2>
+        <ul class="pd-list">
+          <li>Instantly execute a trade directly from your mobile using the Telegram bot, setting your own money &amp; risk management</li>
+          <li>Modify TP and SL of any trade with ease</li>
+          <li>Get a screenshot of your favorite trading system by adding the template .tpl file name to the EA</li>
+          <li>Enable trailing stop on executed trades even if you are on mobile</li>
+          <li>Set your breakeven parameters and move trades in profit to breakeven with fast execution</li>
+          <li>Accept trade signals from groups and open trades based on signals posted in Telegram groups</li>
+          <li>Execute and close trades instantly</li>
+          <li>Get the account information of open trades with the click of a button</li>
+        </ul>
+        <div class="pd-note"><b>Important note:</b> Attach it to one chart only.</div>
+
+        <h2>Watch <span class="gradient-text-cb">How It Works</span></h2>
+        <div class="pd-card">
+          <div class="pd-video"><iframe src="https://www.youtube.com/embed/EIgXJqfOlQE" title="Telegram Trading Bot video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <p style="margin:.9rem 0 0;font-size:.85rem;color:var(--slate-400);">Can't see the video? <a href="https://youtu.be/EIgXJqfOlQE" target="_blank" rel="noopener" style="color:var(--cyan-400);">Watch it on YouTube</a>.</p>
+        </div>
+
+        <h2><span class="gradient-text-cb">Support</span></h2>
+        <ul class="pd-list">
+          <li>If you have any questions, don't hesitate to contact us via private message</li>
+          <li>We also add you to a support group where our valued customers ask questions and are guided to solve problems</li>
+          <li>The Telegram bot can also be added to a private group for specific users</li>
+        </ul>
+
+        <h2>Setup <span class="gradient-text-cb">Instructions</span></h2>
+        <ol class="pd-steps">
+          <li>Open your Telegram app and search for "BotFather".</li>
+          <li>Type <span class="pd-code">/start</span> and click/type <span class="pd-code">/newbot</span> to create a new bot.</li>
+          <li>Give your bot a nickname and username (e.g. nickname: Assetbase, username: Assetbasebot &mdash; the username must end with "bot").</li>
+          <li>Congratulations! You have created your Telegram bot.</li>
+          <li>Save your bot API token (it looks like <span class="pd-code">123456789:AAxxxxxxxxxxxxxxxxxxxxxxxx</span>).</li>
+          <li>Create a new Telegram group if you don't have an existing one.</li>
+          <li>Add the new Telegram bot to the group.</li>
+          <li>Open the group info, then Manage, add the Telegram bot as Admin, type the bot username and click Save.</li>
+          <li>Back in MetaTrader 5, go to Tools &gt; Options &gt; Expert Advisors, tick "Allow WebRequest for listed URL" and add <span class="pd-code">https://api.telegram.org</span>.</li>
+          <li>Attach the utility to your MetaTrader 5 chart and fill in the API token (from step 5).</li>
+          <li>Congratulations! Your utility is ready to work for you.</li>
+        </ol>
+
+        <h2>Utility <span class="gradient-text-cb">Parameters</span></h2>
+        <div class="pd-grid">
+          <div class="pd-feat"><b>Telegram_APIToken</b><span>The API token of the Telegram bot you created with BotFather.</span></div>
+          <div class="pd-feat"><b>Templates</b><span>The name of your saved MT5 template, entered without .tpl. For example, if you saved your favorite strategy as mycustomtemplate.tpl, enter as many as you like separated by semicolons: <span class="pd-code">mycustomtemplate; mycustomtemplate1; mycustomtemplate2</span></span></div>
+        </div>
+        <div class="pd-cta">
+          <h3>Get the Full Version</h3>
+          <p>Contact us to purchase the full version, or try the demo first on a demo account.</p>
+          <div class="pd-cta-row">
+            <button class="btn-primary" onclick="window.open('https://t.me/pipsmath_admin','_blank')">Contact Us to Purchase</button>
+            <button class="btn-outline" onclick="navigate('demo-telegram')">Download Demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer-telegram"></div>
+</div>
+
+<!-- ══════════════════ DEMO DOWNLOAD: Multi Account Copier (hidden page) ══════════════════ -->
+<div id="page-demo-copier" class="page">
+  <div style="padding-top:80px;">
+    <section style="padding:4rem 1.5rem;background:linear-gradient(to bottom,var(--bg-900),var(--bg-950));">
+      <div class="container section-header" style="margin-bottom:0;">
+        <h1 class="gradient-text-cb">Download Multi Account Copier Demo</h1>
+        <p>Demo version &middot; works on demo accounts only</p>
+      </div>
+    </section>
+    <section style="padding:3rem 1.5rem 5rem;">
+      <div class="container" style="max-width:640px;">
+        <button class="back-link" onclick="navigate('copier')" style="margin:0 0 1.5rem;display:flex;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Multi Account Copier</button>
+        <div class="form-box" style="text-align:center;">
+          <div class="pd-note" style="text-align:left;margin-top:0;"><b>Demo accounts only.</b> This demo version is active only on MT5 demo accounts. To use it on a live account, contact us to purchase the full version.</div>
+          <a href="Multi_Replicator_Copier_Demo.ex5" download="Multi_Replicator_Copier_Demo.ex5" class="btn-primary" style="text-decoration:none;display:inline-flex;margin:.5rem 0 1.25rem;background:linear-gradient(90deg,#16a34a,#15803d);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Demo (.ex5)</a>
+          <ol class="pd-steps" style="text-align:left;">
+            <li>In MetaTrader 5 go to File &gt; Open Data Folder &gt; MQL5 &gt; Experts.</li>
+            <li>Paste the downloaded .ex5 file there, then restart MT5 (or right-click Navigator &gt; Refresh).</li>
+            <li>Open a <strong>demo account</strong> and drag the EA onto a chart.</li>
+            <li>Enable Algo Trading and allow the EA to trade.</li>
+          </ol>
+          <button class="btn-primary" onclick="window.open('https://t.me/pipsmath_admin','_blank')" style="margin-top:1.5rem;display:inline-flex;">Contact Us to Purchase Full Version</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer-demo-copier"></div>
+</div>
+
+<!-- ══════════════════ DEMO DOWNLOAD: Telegram Trading Bot (hidden page) ══════════════════ -->
+<div id="page-demo-telegram" class="page">
+  <div style="padding-top:80px;">
+    <section style="padding:4rem 1.5rem;background:linear-gradient(to bottom,var(--bg-900),var(--bg-950));">
+      <div class="container section-header" style="margin-bottom:0;">
+        <h1 class="gradient-text-cb">Download Telegram Trading Bot Demo</h1>
+        <p>Demo version &middot; works on demo accounts only</p>
+      </div>
+    </section>
+    <section style="padding:3rem 1.5rem 5rem;">
+      <div class="container" style="max-width:640px;">
+        <button class="back-link" onclick="navigate('telegram')" style="margin:0 0 1.5rem;display:flex;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Back to Telegram Trading Bot</button>
+        <div class="form-box" style="text-align:center;">
+          <div class="pd-note" style="text-align:left;margin-top:0;"><b>Demo accounts only.</b> This demo version is active only on MT5 demo accounts. To use it on a live account, contact us to purchase the full version.</div>
+          <a href="Telegram_Trading_Chat_Bot_Demo.ex5" download="Telegram_Trading_Chat_Bot_Demo.ex5" class="btn-primary" style="text-decoration:none;display:inline-flex;margin:.5rem 0 1.25rem;background:linear-gradient(90deg,#16a34a,#15803d);"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Demo (.ex5)</a>
+          <ol class="pd-steps" style="text-align:left;">
+            <li>In MetaTrader 5 go to File &gt; Open Data Folder &gt; MQL5 &gt; Experts.</li>
+            <li>Paste the downloaded .ex5 file there, then restart MT5 (or right-click Navigator &gt; Refresh).</li>
+            <li>Open a <strong>demo account</strong> and drag the EA onto a chart.</li>
+            <li>Attach it to <strong>one chart only</strong>, then follow the setup instructions on the product page to add your bot API token.</li>
+          </ol>
+          <button class="btn-primary" onclick="window.open('https://t.me/pipsmath_admin','_blank')" style="margin-top:1.5rem;display:inline-flex;">Contact Us to Purchase Full Version</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="footer-demo-telegram"></div>
+</div>
+
 <!-- ══════════════════ SIGNALS ══════════════════ -->
 <div id="page-signals" class="page">
   <div id="signals-page">
@@ -1905,14 +2106,14 @@ const products = [
     desc: 'Copy trades across multiple MT4/MT5 accounts simultaneously with full risk control and real-time synchronisation.',
     features: ['Copy to unlimited accounts', 'Real-time synchronisation', 'Adjustable lot sizing per account', 'Risk management controls', 'Account filtering options', 'Detailed trade logging'],
     price: '$99', period: 'One-time', badge: '',
-    action: 'contact', actionLabel: 'Contact Us', secondary: null
+    action: 'contact', actionLabel: 'Contact Us', secondary: null, detail: 'copier'
   },
   {
     title: 'MT4/MT5 Telegram Trading Bot',
     desc: 'Get real-time trade notifications, account stats, and P&L reports delivered straight to your phone — 24/7.',
     features: ['Instant trade open/close alerts', 'Account balance & equity updates', 'Daily & weekly P&L reports', 'Custom drawdown alerts', 'Remote monitoring from phone', '24/7 operation'],
     price: '$119', period: 'One-time', badge: '',
-    action: 'contact', actionLabel: 'Contact Us', secondary: null
+    action: 'contact', actionLabel: 'Contact Us', secondary: null, detail: 'telegram'
   }
 ];
 
@@ -1974,7 +2175,9 @@ function renderProducts() {
       <hr class="product-divider" />
       ${p.price ? `<div class="price-tag">${p.price}</div><div class="price-period">${p.period}</div>` : ''}
       <div class="btn-row">
-        ${p.action === 'quote'
+        ${p.detail
+          ? `<button class="btn-buy" onclick="navigate('${p.detail}')" style="flex:1">View Details</button>`
+          : p.action === 'quote'
           ? `<button class="btn-buy" onclick="window.open('https://t.me/pipsmath_admin','_blank')" style="flex:1">${p.actionLabel}</button>`
           : p.secondary
             ? `<button class="btn-buy" onclick="${p.actionLabel === 'Learn More' ? "navigate('signals')" : "window.open('https://t.me/pipsmath_admin','_blank')"}">${p.actionLabel}</button>
@@ -2354,7 +2557,7 @@ function navigate(page) {
   document.getElementById('page-' + page).classList.add('active');
   document.querySelectorAll('.nav-link, .mobile-link').forEach(btn => {
     // keep "Trading" highlighted while on the trial / stream sub-pages
-    const target = (page === 'trial' || page === 'stream' || page === 'download' || page === 'step2') ? 'signals' : page;
+    const target = (page === 'copier' || page === 'telegram' || page === 'demo-copier' || page === 'demo-telegram') ? 'products' : (page === 'trial' || page === 'stream' || page === 'download' || page === 'step2') ? 'signals' : page;
     btn.classList.toggle('active', btn.dataset.page === target);
   });
   if (page === 'stream') {
@@ -2648,7 +2851,7 @@ renderPerf();
 renderServices();
 renderProducts();
 renderBlog();
-['home','services','products','signals','trial','download','step2','stream','contact','blog'].forEach(p => {
+['home','services','products','signals','trial','download','step2','stream','contact','blog','copier','telegram','demo-copier','demo-telegram'].forEach(p => {
   document.getElementById('footer-' + p).innerHTML = footerHTML();
 });
 </script>
