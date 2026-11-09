@@ -1,1 +1,29 @@
-
+---
+layout: default
+title: Blog
+description: Articles on algorithmic trading, MT4/MT5 platforms, risk management and trading tools from PIPSmath.
+permalink: /blog/
+---
+<section style="padding:4rem 1.5rem 2rem;background:linear-gradient(to bottom,var(--bg-900),var(--bg-950));text-align:center;">
+  <div class="container section-header" style="margin-bottom:0;">
+    <h1 class="gradient-text-cb">Blog</h1>
+    <p>Algorithmic trading guides, platform comparisons and strategy tips.</p>
+  </div>
+</section>
+<section style="padding:3rem 1.5rem 4rem;">
+  <div class="container">
+    <div class="blog-list">
+      {% for post in site.posts %}
+      <a class="blog-card" href="{{ post.url }}">
+        {% if post.category %}<span class="article-cat">{{ post.category }}</span>{% endif %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <div class="article-meta" style="margin:1rem 0 0;">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          {% if post.read_time %}<span>&middot; {{ post.read_time }}</span>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
