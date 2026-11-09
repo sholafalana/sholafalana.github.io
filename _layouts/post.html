@@ -1,1 +1,20 @@
-
+---
+layout: default
+---
+<article class="article-wrap">
+  <a href="/blog/" style="color:var(--slate-400);text-decoration:none;font-size:.9rem;">&larr; All articles</a>
+  <div class="article-meta" style="margin-top:1.25rem;">
+    {% if page.category %}<span class="article-cat">{{ page.category }}</span>{% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.read_time %}<span>&middot; {{ page.read_time }}</span>{% endif %}
+  </div>
+  <h1>{{ page.title }}</h1>
+  <div class="article-body">
+    {{ content }}
+  </div>
+  <div class="article-cta">
+    <h3>Ready to automate your trading?</h3>
+    <p>Explore our EAs, utilities and custom development services.</p>
+    <a class="btn-primary" href="/#services" style="text-decoration:none;display:inline-flex;">View Services</a>
+  </div>
+</article>
